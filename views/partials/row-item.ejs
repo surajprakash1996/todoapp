@@ -1,0 +1,19 @@
+<tr>
+    <th><%= todo.toDoTitle %></th>
+    <th><%= todo.toDoDesc %></th>
+    <th>
+      <a href="update?id=<%= todo._id %>">Update</a>
+    </th>
+    <th>
+      <a href="#" 
+       class="delete-btn" 
+       data-id="<%= todo._id %>" 
+       data-bs-toggle="modal" 
+       data-bs-target="#deleteModal">
+       Delete
+    </a>
+    <th>
+      <a href="view?id=<%= todo._id %>">View</a>
+    </th>
+    </th>
+  </tr>

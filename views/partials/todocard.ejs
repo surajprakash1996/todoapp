@@ -1,0 +1,19 @@
+<div class="col-sm-6 mb-3">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= todo.toDoTitle.charAt(0).toUpperCase() + todo.toDoTitle.slice(1); %></h5>
+            <p class="card-text">
+                <%= todo.toDoDesc %>
+            </p>
+            <a href="update?id=<%= todo._id %>" class="btn btn-primary">Update</a>
+            <a href="view?id=<%=todo._id %>" class="btn btn-primary">View</a>
+            <a 
+                class="delete-btn btn btn-primary" 
+                data-id="<%= todo._id %>" 
+                data-bs-toggle="modal" 
+                data-bs-target="#deleteModal">
+                Delete
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<%- include('../layouts/header') %>
+
+<div class="container">
+
+    <h2 class="mb-3 mt-3">Single Item</h1>
+    <hr>
+
+    <% if( todo ) {  %>
+
+    <h3><%= todo.toDoTitle %></h3>
+    <p> <%= todo.toDoDesc %> </p>
+    <a class="btn btn-primary" href="/lists">Go back on lists</a>
+
+    <% } else {  %>
+        <p>No todo item.</p>
+    <% } %>
+
+</div>
+
+
+<%- include('../layouts/footer') %>

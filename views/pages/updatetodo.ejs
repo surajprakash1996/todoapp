@@ -1,0 +1,47 @@
+<%- include('../layouts/header') %>
+
+<div class="container">
+    <h3 class="mb-3 mt-3">Update Todo Item</h3>
+   <div class="row">
+    <div class="col-6">
+        <form class="row g-3" method="post" action="/updatetodo?id=<%= todo._id %>" id="todoform">
+            <div class="col-md-12">
+              <label for="todo-title" class="form-label">Todo title</label>
+              <input type="text" name="todotitle" value="<%= todo.toDoTitle %>" placeholder="Todo title" class="form-control" id="todo-title">
+            </div>
+            <div class="col-md-12">
+              <label for="todo-desc" class="form-label">Todo description</label>
+              <textarea class="form-control" name="tododesc" placeholder="Todo description" id="todo-desc"><%= todo.toDoDesc %></textarea>
+            </div>            
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Update Todo</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+      <h4>Recent Todos</h4>
+      <% if(todos.length > 0) { %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+              <th scope="col">View</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% todos.forEach(function(todo) { %> 
+                <%- include('../partials/row-item', { todo: todo }) %> 
+              <% }) %>
+          </tbody>
+        </table>
+      <% } else {  %>
+        <p>No recent todos.</p>
+      <% }  %>
+    </div>
+   </div>
+</div>
+
+<%- include('../layouts/footer') %>
